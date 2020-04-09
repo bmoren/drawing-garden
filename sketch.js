@@ -3,9 +3,6 @@ let gridSpacing = 40
 
 function setup() {
 
-  let body = select('body')
-  body.style('background-color', 'rgb(79,50,0)')
-
 
   for (let x = gridSpacing; x < window.innerWidth - gridSpacing; x += gridSpacing) {
     for (let y = 0; y < window.innerHeight - (gridSpacing * 2); y += gridSpacing) {
@@ -13,12 +10,8 @@ function setup() {
       // let p = createP(randomEmoji()); // start with random emojis instead
       let p = createP("〰");
 
-      p.style('font-size', '2em')
-      p.style('cursor', 'pointer'); //give the mario hand while mousing over
-
-
       p.position(x, y)
-      p.mousePressed(changeEmoji)
+      p.mousePressed(pick)
       p.mouseOver(changeEmoji)
 
     }
@@ -30,6 +23,10 @@ function changeEmoji() {
   this.html(randomEmoji())
 }
 
+
+function pick(){
+  this.html("〰")
+}
 
 //utility function
 function randomEmoji() {
@@ -56,7 +53,7 @@ function randomEmoji() {
   );
 
   newFavicon = faviconTemplate`${output}`;
-    console.log(newFavicon);
+    // console.log(newFavicon);
     linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${newFavicon}`);
 
   return output;
