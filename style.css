@@ -1,7 +1,12 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: rgb(79,50,0);
+  /* background:linear-gradient(rgb(254, 213, 166), rgba(102, 47, 2, 0.82)); */
+  background:
+  linear-gradient(217deg,rgb(134, 96, 38), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgb(102, 47, 2), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgb(154, 98, 15), rgba(0,0,255,0) 70.71%);
+  height:100vh;
 
 }
 canvas {
@@ -11,4 +16,5 @@ canvas {
 p{
   font-size:2em;
   cursor:pointer;
+/* font-family: 'Libre Baskerville', serif; */
 }
