@@ -18,7 +18,7 @@ function setup() {
 
   var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 
-  console.log(isChrome, "chrome")
+  // console.log(isChrome, "chrome")
 
   poly = new p5.PolySynth();
 
@@ -30,8 +30,8 @@ function setup() {
   // delay.process(poly, 0.50, 0.5, 2300);
   // reverb.process(delay, 4, 2);
 
-// let i = 0;
-// let cts = ['c','l', 'i', 'c',' k', '〰', 'f','o','r', '〰', 's','o','u','n','d','!']
+let i = 0;
+let cts = ['c','l', 'i', 'c',' k', '〰', 'f','o','r', '〰', 's','o','u','n','d','!']
 
 
 for (let y = 0; y < H - (gridSpacing * 2); y += gridSpacing) {
@@ -40,15 +40,19 @@ for (let y = 0; y < H - (gridSpacing * 2); y += gridSpacing) {
 
       let p
 
-      // if(i > cts.length-1){
-        p = createP("〰");
-      // }else{
-      //   p = createP(cts[i]);
-      //   p.class('sound-warning')
-      // }
-      // i++
+      if(isChrome){
+        if(i > cts.length-1){
+          p = createP("〰");
+        }else{
+          p = createP(cts[i]);
+          p.class('sound-warning')
+        }
+        i++
 
-      // let p = createP(randomEmoji()); // start with random emojis instead
+      }else{
+        p = createP("〰");
+      }
+
       p.position(x, y)
       p.mousePressed(changeEmoji)
       p.mouseOver(changeEmoji)
