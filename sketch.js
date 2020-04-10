@@ -16,8 +16,6 @@ let H = window.innerHeight
 
 function setup() {
 
-  var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-
   console.log(isChrome, "chrome")
 
   poly = new p5.PolySynth();
@@ -40,7 +38,7 @@ for (let y = 0; y < H - (gridSpacing * 2); y += gridSpacing) {
 
       let p
 
-      if(isChrome){
+      if(window.chrome){
         if(i > cts.length-1){
           p = createP("〰");
         }else{
