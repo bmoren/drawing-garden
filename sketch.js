@@ -18,7 +18,7 @@ function setup() {
 
   var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 
-  // console.log(isChrome, "chrome")
+  console.log(isChrome, "chrome")
 
   poly = new p5.PolySynth();
 
