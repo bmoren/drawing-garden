@@ -16,7 +16,6 @@ let H = window.innerHeight
 
 function setup() {
 
-  console.log(isChrome, "chrome")
 
   poly = new p5.PolySynth();
 
